@@ -40,12 +40,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
           className={cn(
             "flex min-h-screen flex-col bg-background font-sans antialiased ",
             fontSans.variable
-          )}>
-         
+          )}
+        >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="top-0  z-50 bg-gray-300 p-4">
+            <div className="top-0  z-50 bg-gray-200 p-1">
               <SiteHeader />
-              <div  className=" flex-1 h-[calc(100vh-6rem)] overflow-y-auto p-5">{children}</div>
+              <div className=" h-[calc(100vh-4.8rem)] flex-1 overflow-y-auto p-5">
+                {children}
+              </div>
             </div>
             <Footer />
             <TailwindIndicator />
