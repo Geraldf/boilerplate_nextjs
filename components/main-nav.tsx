@@ -30,23 +30,12 @@ export function MainNav(items: MainNavProps) {
         <Icons.fox className="h-6 w-6" />
         <span className="inline-block font-bold">{siteConfig.name}</span>
       </Link>
-      <Menubar>
-        <MenubarMenu>
-          <SingleMenuItem MenuItems={items.items} />
-          <MenubarTrigger>File</MenubarTrigger>
-          <MenubarTrigger>Test</MenubarTrigger>
-          <MenubarContent>
-            <MenubarItem>
-              New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-            </MenubarItem>
-            <MenubarItem>New Window</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Share</MenubarItem>
-            <MenubarSeparator />
-            <MenubarItem>Print</MenubarItem>
-          </MenubarContent>
-        </MenubarMenu>
+
+      <Menubar className="text-sm ">
+        <SingleMenuItem MenuItems={items.items} />
       </Menubar>
+      
+      
     </div>
   )
 }

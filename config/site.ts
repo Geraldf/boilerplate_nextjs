@@ -1,6 +1,12 @@
-import { FaceIcon, ImageIcon, SunIcon } from "@radix-ui/react-icons"
+import { FaceIcon, ImageIcon, SunIcon } from "@radix-ui/react-icons";
 
-import { NavItems } from "@/types/nav"
+
+
+import { NavItems } from "@/types/nav";
+
+
+
+
 
 export type SiteConfig = typeof siteConfig
 
@@ -18,6 +24,25 @@ export const siteConfig = {
 export const Nav: NavItems[] = [
   {
     title: "Home",
+    elements: [
+      {
+        name: "Test",
+        url: "/test",
+        icon: FaceIcon,
+        enabled: true,
+        external: false,
+      },
+      {
+        name: "Docs",
+        url: "/docs",
+        icon: ImageIcon,
+        enabled: true,
+        external: false,
+      },
+    ],
+  },
+  {
+    title: "Home2",
     elements: [
       {
         name: "Test",
