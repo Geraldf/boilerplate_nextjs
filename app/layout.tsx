@@ -1,14 +1,20 @@
-import "@/styles/globals.css"
-import { Metadata } from "next"
+import "@/styles/globals.css";
+import { Metadata } from "next";
 
-import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
-import { SiteHeader } from "@/components/site-header"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeProvider } from "@/components/theme-provider"
 
-import Footer from "../components/footer"
+
+import { SiteNavElements, siteConfig } from "@/config/site"
+import { fontSans } from "@/lib/fonts";
+import { cn } from "@/lib/utils";
+import { SidebarDemo } from "@/components/SidebarDemo";
+import { SiteHeader } from "@/components/site-header";
+import { TailwindIndicator } from "@/components/tailwind-indicator";
+import { ThemeProvider } from "@/components/theme-provider";
+
+
+
+import Footer from "../components/footer";
+
 
 export const metadata: Metadata = {
   title: {
@@ -40,12 +46,14 @@ export default function RootLayout({ children }: RootLayoutProps) {
           className={cn(
             "flex min-h-screen flex-col bg-background font-sans antialiased ",
             fontSans.variable
-          )}>
-         
+          )}
+        >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <div className="top-0  z-50 bg-gray-300 p-4">
-              <SiteHeader />
-              <div  className=" flex-1 h-[calc(100vh-6rem)] overflow-y-auto p-5">{children}</div>
+            <div className="top-0  z-50 flex bg-gray-200 p-1">
+              <SidebarDemo N_Elements={SiteNavElements} />
+              <div className=" h-[calc(100vh-2.8rem)] flex-1 overflow-y-auto p-2 pl-5 ">
+                {children}
+              </div>
             </div>
             <Footer />
             <TailwindIndicator />

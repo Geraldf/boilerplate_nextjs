@@ -1,10 +1,12 @@
-import React from 'react'
+import React from "react"
 
 type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    <div className="w-full bottom-1 flex items-center justify-center h-6 bg-gray-800 text-white">Footer</div>
+    <div className="bottom-1 flex h-6 w-full items-center justify-center bg-gray-800 text-white">
+      Footer
+    </div>
   )
 }
 
