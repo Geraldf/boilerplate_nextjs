@@ -1,20 +1,14 @@
-import "@/styles/globals.css";
-import { Metadata } from "next";
-
-
+import "@/styles/globals.css"
+import { Metadata } from "next"
 
 import { SiteNavElements, siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts";
-import { cn } from "@/lib/utils";
-import { SidebarDemo } from "@/components/SidebarDemo";
-import { SiteHeader } from "@/components/site-header";
-import { TailwindIndicator } from "@/components/tailwind-indicator";
-import { ThemeProvider } from "@/components/theme-provider";
+import { fontSans } from "@/lib/fonts"
+import { cn } from "@/lib/utils"
+import { SidebarDemo } from "@/components/SidebarDemo"
+import { TailwindIndicator } from "@/components/tailwind-indicator"
+import { ThemeProvider } from "@/components/theme-provider"
 
-
-
-import Footer from "../components/footer";
-
+import Footer from "../components/footer"
 
 export const metadata: Metadata = {
   title: {

@@ -30,7 +30,7 @@ const SingleMenuItem = (props: Props) => {
           <MenubarMenu key={index}>
             <MenubarTrigger
               key={index}
-              className="hover:bg-slate-200 px-3 py-1 font-medium"
+              className="px-3 py-1 font-medium hover:bg-slate-200"
             >
               {mitem.title}
             </MenubarTrigger>
