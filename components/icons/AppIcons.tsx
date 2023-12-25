@@ -14,7 +14,7 @@ export const CircleOff = (props: IconTypeProps) => (
     viewBox={`0 0 ${props.width * 1.5} ${props.height * 1.5}`}
     fill="none"
     stroke="currentColor"
-    strokeWidth="2"
+    strokeWidth="1"
     strokeLinecap="round"
     strokeLinejoin="round"
     className="lucide lucide-book-open-check"
