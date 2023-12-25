@@ -1,51 +1,83 @@
-"use client";
+"use client"
 
-import React, { FunctionComponent } from "react";
-import Link from "next/link";
+import React, { FunctionComponent } from "react"
+import Link from "next/link"
 
+import { NavElements, NavItems } from "@/types/nav"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-
-import { NavElements, NavItems } from '@/types/nav';
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-
-
-
+import { ThemeToggle } from "./theme-toggle"
+import { CircleOff } from './icons/AppIcons';
 
 type Props = {
   N_Elements: NavElements[]
 }
 
-export  const SidebarDemo: FunctionComponent<Props> = () => {
+export const SidebarDemo: FunctionComponent<Props> = (props: Props) => {
   const [open, setOpen] = React.useState(false)
   return (
     <div className="flex">
       <div
         className={` ${
-          open ? "w-12" : "w-60 "
-        } flex h-screen flex-col p-3 shadow duration-300`}
+          open ? "w-12" : "w-44 "
+        } flex h-[calc(100vh-35px)] flex-col p-3 shadow transition-all duration-300`}
       >
         <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            {!open && <h2 className="text-xl font-bold">Dashboard</h2>}
-            <button onClick={() => setOpen(!open)}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="h-6 w-6 text-white"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                />
-              </svg>
-            </button>
+          <div className={` ${open ? "-ml-32" : "ml-0 "} duration-300`}>
+            <div className="flex items-center justify-between ">
+              <h2 className="text-xl font-bold ">Dashboard</h2>
+              <button onClick={() => setOpen(!open)}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              </button>
+            </div>
           </div>
-          <div className="relative">
+          <div className="flex flex-col">
+            {props.N_Elements.map((mitem: NavElements, index: number) => (
+              <Link
+                key={index}
+                href={mitem.url}
+                className=" p-0 font-medium hover:bg-slate-300"
+              >
+                <div className="gap- flex items-center   ">
+                  <div className="flex items-center justify-center">
+                    {mitem.icon &&
+                      React.createElement(mitem.icon!, {
+                        width: 24,
+                        height: 16,
+                        color: "black",
+                      })}
+                  </div>
+                  <div className="flex items-center justify-center">
+                    {!mitem.icon &&
+                      React.createElement(CircleOff, {
+                        width: 24,
+                        height: 16,
+                        color: "black",
+                      })}
+                  </div>
+                  
+                  <div className={` ${open ? "-ml-32" : "ml-0 "} duration-300`}>
+                    {mitem.name}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* <div className="relative">
             <span className="absolute inset-y-0 left-0 flex items-center py-4">
               <button
                 type="submit"
@@ -192,7 +224,7 @@ export  const SidebarDemo: FunctionComponent<Props> = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

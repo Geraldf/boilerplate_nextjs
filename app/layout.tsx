@@ -14,7 +14,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 
 import Footer from "../components/footer";
-import { SidebarNavItem } from 'types';
 
 
 export const metadata: Metadata = {
@@ -51,9 +50,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <div className="top-0  z-50 flex bg-gray-200 p-1">
-              <SidebarDemo  />
-
-              <div className=" h-[calc(100vh-4.8rem)] flex-1 overflow-y-auto p-5">
+              <SidebarDemo N_Elements={SiteNavElements} />
+              <div className=" h-[calc(100vh-2.8rem)] flex-1 overflow-y-auto p-2 pl-5 ">
                 {children}
               </div>
             </div>

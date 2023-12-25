@@ -1,9 +1,14 @@
+import { title } from "process";
+import { FaceIcon, ImageIcon, SunIcon } from "@radix-ui/react-icons";
 
 
-import { title } from "process"
-import { FaceIcon, ImageIcon, SunIcon } from "@radix-ui/react-icons"
 
-import { NavElements, NavItems } from "@/types/nav"
+import { NavElements, NavItems } from "@/types/nav";
+import { HomeIcon, TestIcon } from "@/components/icons/AppIcons";
+
+
+
+
 
 export type SiteConfig = typeof siteConfig
 
@@ -17,66 +22,35 @@ export const siteConfig = {
     docs: "https://ui.shadcn.com",
   },
 }
-export const SiteDescription = siteConfig.description;
+export const SiteDescription = siteConfig.description
 export const Nav: NavItems[] = [
   {
     title: "Home",
-    elements: [
-      {
-        name: "Test",
-        url: "/test",
-        icon: FaceIcon,
-        enabled: true,
-        external: false,
-      },
-      {
-        name: "Docs",
-        url: "/docs",
-
-        enabled: true,
-        external: false,
-      },
-    ],
+    elements: [],
   },
   {
     title: "Home2",
     elements: [
-      {
-        name: "Test",
-        url: "/test",
-        icon: FaceIcon,
-        enabled: true,
-        external: false,
-      },
-      {
-        name: "Docs",
-        url: "/docs",
-        icon: ImageIcon,
-        enabled: true,
-        external: false,
-        subMenu: [
-          {
-            title: "SubmenuTitle",
-            elements: [
-              {
-                name: "Test",
-                url: "/test",
-                icon: FaceIcon,
-                enabled: true,
-                external: false,
-              },
-            ],
-          },
-        ],
-      },
+     
     ],
   },
 ]
 
+
 export const SiteNavElements: NavElements[] = [
   {
-    name: "Test2",
+    name: "Home",
+    url: "/",
+    icon: HomeIcon,
+  },
+  {
+    name: "Test3",
     url: "/test",
-    icon: FaceIcon,
+    icon: TestIcon,
+  },
+  {
+    name: "Test4",
+    url: "/test",
+   
   },
 ]

@@ -1,11 +1,21 @@
+import { ReactElement, SVGProps } from "react";
 import { IconProps } from "@radix-ui/react-icons/dist/types";
+
+
+
+
+
+export interface IconTypeProps {
+  width: number
+  height: number
+  color: string
+}
+type IconType = (props: IconTypeProps) => JSX.Element
 
 export interface NavElements {
   name: string
   url: string
-  icon?: React.ForwardRefExoticComponent<
-    IconProps & React.RefAttributes<SVGSVGElement>
-  >
+  icon?: IconType
   enabled?: boolean
   external?: boolean
   subMenu?: NavItems[]
