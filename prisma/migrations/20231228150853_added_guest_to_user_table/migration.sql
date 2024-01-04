@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `User` MODIFY `guest` BOOLEAN NOT NULL DEFAULT true;

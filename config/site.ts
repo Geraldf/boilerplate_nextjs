@@ -44,8 +44,8 @@ export const SiteNavElements: NavElements[] = [
     icon: HomeIcon,
   },
   {
-    name: "Test3",
-    url: "/test",
+    name: "UserList",
+    url: "/user",
     icon: TestIcon,
   },
   {
