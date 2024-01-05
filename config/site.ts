@@ -51,6 +51,9 @@ export const SiteNavElements: NavElements[] = [
   {
     name: "Test4",
     url: "/test",
-   
+  },
+  {
+    name: "SNOW",
+    url: "/snow",
   },
 ]

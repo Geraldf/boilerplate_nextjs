@@ -1914,6 +1914,15 @@
     "@types/scheduler" "*"
     csstype "^3.0.2"
 
+"@types/react@^16.9.43":
+  version "16.14.55"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.14.55.tgz#a0107f36c885af9617cf39da3dc37e406c440e52"
+  integrity sha512-HO/QHDg23Dx4ukfufr5YSTWyhrbyThXE2OzXfNkcw7vJcusBY5l1i1TZpJuyAn9EsC6o91/6OsIvXY54xTV+XQ==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
 "@types/scheduler@*":
   version "0.16.8"
   resolved "https://registry.yarnpkg.com/@types/scheduler/-/scheduler-0.16.8.tgz#ce5ace04cfeabe7ef87c0091e50752e36707deff"
@@ -3633,6 +3642,13 @@ next-themes@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.2.1.tgz#0c9f128e847979daf6c67f70b38e6b6567856e45"
   integrity sha512-B+AKNfYNIzh0vqQQKqQItTS8evEouKD7H5Hj3kmuPERwddR2TxvDSFZuTj6T7Jfn1oyeUyJMydPl1Bkxkh0W7A==
+
+next-utils@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/next-utils/-/next-utils-0.2.1.tgz#55ebe141c410d7745b8ab62a90f493e14ae6419e"
+  integrity sha512-Mz28ZZNqZfSBlHNRdVVXjZAqGuWGlf7bfCEXBFf6Q5s4ieINmQRqo6MMPhCT6V1uhSHa2S/YYhiCmFXtxYqaiw==
+  dependencies:
+    "@types/react" "^16.9.43"
 
 next@^14.0.5-canary.31:
   version "14.0.5-canary.31"
