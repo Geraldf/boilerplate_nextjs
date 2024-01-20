@@ -6,14 +6,31 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
-model User {
-  id     Int     @id @default(autoincrement())
-  name   String? @db.VarChar(255)
-  email  String  @unique @db.VarChar(255)
-  guest  Boolean @default(true)
-  active Boolean @default(true)
+model Users {
+  id      Int    @id @default(autoincrement())
+  name    String
+  sysID   String @unique
+  Roles   Roles? @relation(fields: [rolesId], references: [id])
+  rolesId Int?
+}
+
+model Roles {
+  id    Int     @id @default(autoincrement())
+  name  String
+  sysID String  @unique
+  Users Users[]
+}
+
+model Groups {
+  sysID String @id
+
+  name String
+
+  parentId String? 
+  parent   Groups?  @relation("ParentChild", fields: [parentId], references: [sysID])
+  children Groups[] @relation("ParentChild")
 }

@@ -40,7 +40,7 @@ const defaultColumn: Partial<ColumnDef<User>> = {
     return (
       <>
         <Input
-          className=" px-1 h-full bg-transparent border-none"
+          className=" h-full border-none bg-transparent px-1"
           value={value as string}
           onChange={(e) => setValue(e.target.value)}
           onBlur={onBlur}
@@ -344,7 +344,7 @@ export function UserList(user: User[]) {
         {Object.keys(rowSelection).length} of{" "}
         {table.getPreFilteredRowModel().rows.length} Total Rows Selected
         {Object.keys(rowSelection).length > 0 && (
-          <Button variant="destructive" className="p-0 px-1 h-4 " onClick={() => {handleDelete(rowSelection)}} >delete</Button>
+          <Button variant="destructive" className="h-4 p-0 px-1 " onClick={() => {handleDelete(rowSelection)}} >delete</Button>
         )}
       </div>
     </div>
