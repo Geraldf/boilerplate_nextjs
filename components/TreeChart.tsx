@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react"
 import * as d3 from "d3"
 
-import { chart } from "@/lib/nodeUpdate"
+import { chart } from "@/lib/D3js/nodeUpdate"
 
 export interface TreeChartData {
   name: string
@@ -18,8 +18,7 @@ const TreeChart: React.FC<TreeChartProps> = ({ data }) => {
   useEffect(() => {
     if (data && d3Container.current) {
       const svg = d3.select(d3Container.current)
-      chart(svg, data);
-      
+      chart(svg, data)
     }
   }, [data])
 
